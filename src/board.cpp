@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include "board.h"
 int Pawn(char *ptr[],int n,int m,char a[],int p)
 {
 	char place;

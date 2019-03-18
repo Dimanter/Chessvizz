@@ -1,10 +1,5 @@
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-
+#include "board.h"
 int n=8,m=8;
-
-using namespace std;
 
 extern int Pawn(char *ptr[],int n,int m,char a[],int p);
 extern int pawn(char *ptr[],int n,int m,char a[],int p);

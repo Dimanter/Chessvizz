@@ -1,31 +1,5 @@
 #include "board.h"
-int n=8,m=8;
-
-extern int Pawn(char *ptr[],int n,int m,char a[],int p);
-extern int pawn(char *ptr[],int n,int m,char a[],int p);
-
-extern int Rook(char *ptr[],int n,int m,char a[],int p);
-extern int rook(char *ptr[],int n,int m,char a[],int p);
-
-void king()
-{
-	
-}
-
-void queen()
-{
-	
-}
-
-void bishop()
-{
-	
-}
-
-void kNight()
-{
-	
-}
+#include "extern.h"
 
 extern void pBoard(char *ptr[],int n,int m);
 extern void Board(char *ptr[],int n,int m);
@@ -42,19 +16,17 @@ int main()
 	Board(b,8,8);
 	next:system("clear");
 	pBoard(b,8,8);
-	if(hod%2 != 0){
+	if(hod%2 != 0)
+	{
 		cout << endl << " Time Of White " << endl;
 		hod++;
 	}
-	else {
+	else 
+	{
 		cout << endl << " Time Of Black " << endl;
 		hod++;
 	}
-	
-	
-    povtr:
-    	for(int i=0;i<6;i++)
-    	cin >> a[i];
+    povtr:for(int i=0;i<6;i++)cin >> a[i];
     switch (a[0])
     {
     	case 'p':
@@ -67,7 +39,7 @@ int main()
 			}
 			else
 			{
-				x=pawn(b,8,8,a,6);break;
+				x=pawn(b,8,8,a,6,hod);break;
 			}
 		}
     	case 'r':
@@ -80,13 +52,61 @@ int main()
 			}
 			else
 			{
-				x=rook(b,8,8,a,6);break;
+				x=rook(b,8,8,a,6,hod);break;
 			}
 		}
-    	//case 'b': bishop();break;
-    	//case 'k': king();break;
-    	//case 'n': kNight();break;
-    	//case 'q': queen();break;
+    	case 'b':
+    	{
+    		if(hod%2 != 0)
+			{
+				cout << " Neverniy hod" << endl;
+				x=5;
+				break;
+			}
+			else
+			{
+				x=bishop(b,8,8,a,6,hod);break;
+			}
+		}
+    	case 'k':
+    	{
+    		if(hod%2 != 0)
+			{
+				cout << " Neverniy hod" << endl;
+				x=5;
+				break;
+			}
+			else
+			{
+				x=king(b,8,8,a,6,hod);break;
+			}
+		}
+    	case 'n': 
+    	{
+    		if(hod%2 != 0)
+			{
+				cout << " Neverniy hod" << endl;
+				x=5;
+				break;
+			}
+			else
+			{
+				x=kNight(b,8,8,a,6,hod);break;
+			}
+		}
+    	case 'q': 
+    	{
+    		if(hod%2 != 0)
+			{
+				cout << " Neverniy hod" << endl;
+				x=5;
+				break;
+			}
+			else
+			{
+				x=queen(b,8,8,a,6,hod);break;
+			}
+		}
     	case 'P':
 		{
 			if(hod%2 == 0)
@@ -97,7 +117,7 @@ int main()
 			}
 			else
 			{
-				x=Pawn(b,8,8,a,6);break;
+				x=Pawn(b,8,8,a,6,hod);break;
 			}
 		}
     	case 'R':
@@ -110,13 +130,61 @@ int main()
 			}
 			else
 			{
-				x=Rook(b,8,8,a,6);break;
+				x=rook(b,8,8,a,6,hod);break;
 			}
 		}
-    	//case 'B': Bishop();break;
-    	//case 'K': King();break;
-    	//case 'N': KNight();break;
-    	//case 'Q': Queen();
+    	case 'B': 
+    	{
+    		if(hod%2 == 0)
+			{
+				cout << " Neverniy hod" << endl;
+				x=5;
+				break;
+			}
+			else
+			{
+				x=bishop(b,8,8,a,6,hod);break;
+			}
+		}
+    	case 'K':
+    	{
+    		if(hod%2 == 0)
+			{
+				cout << " Neverniy hod" << endl;
+				x=5;
+				break;
+			}
+			else
+			{
+				x=king(b,8,8,a,6,hod);break;
+			}
+		}
+    	case 'N': 
+    	{
+    		if(hod%2 == 0)
+			{
+				cout << " Neverniy hod" << endl;
+				x=5;
+				break;
+			}
+			else
+			{
+				x=kNight(b,8,8,a,6,hod);break;
+			}
+		}
+    	case 'Q':
+    	{
+    		if(hod%2 == 0)
+			{
+				cout << " Neverniy hod" << endl;
+				x=5;
+				break;
+			}
+			else
+			{
+				x=queen(b,8,8,a,6,hod);break;
+			}
+		}
     }
     if(x == 5)
     goto povtr;

@@ -1,5 +1,4 @@
 #include "board.h"
-#include "extern.h"
 
 extern void pBoard(char *ptr[],int n,int m);
 extern void Board(char *ptr[],int n,int m);

@@ -962,7 +962,7 @@ int bishop(char *ptr[],int n,int m,char a[],int p,int hod)
 				}
 				if(top4 > top3)
 				{
-					for(int i=top1,j=top3;j<top4;i--,j++)
+					for(int i=top1+1,j=top3;j<top4;i--,j++)
 					{
 						if(ptr[i][j] != ' ')
 						{

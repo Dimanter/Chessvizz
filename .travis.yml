@@ -1,4 +1,8 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
+language: C++ 
+
+# Используем дистрибутив Ubuntu 16.04,
+# т.к. в образе предустановлен clang-format версии 7.
+dist: xenial
+
+script:
+  - git ls-files src/ | xargs clang-format -i && git diff --exit-code && make

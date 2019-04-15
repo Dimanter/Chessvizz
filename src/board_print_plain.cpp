@@ -1,7 +1,7 @@
 #include "board.h"
-void Board(char *ptr[],int n,int m)
+void Board(char* ptr[], int n, int m)
 {
-    for (int i = 0 ; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             if (i == 0 && j == 0) {
                 ptr[i][j] = 'R';
@@ -72,18 +72,16 @@ void Board(char *ptr[],int n,int m)
         }
     }
 }
-void pBoard(char *ptr[],int n,int m)
+void pBoard(char* ptr[], int n, int m)
 {
-	for(int i=0,y=n;i<n;i++,y--)
-	{
-		cout << y << "  ";
-		for(int j=0;j<m;j++)
-		{
-			cout << "[ ";
-			cout << ptr[i][j];
-			cout << " ]";
-		}
-		cout << endl << endl;
-	}
-	cout << "     a    b    c    d    e    f    g    h" << endl;
+    for (int i = 0, y = n; i < n; i++, y--) {
+        cout << y << "  ";
+        for (int j = 0; j < m; j++) {
+            cout << "[ ";
+            cout << ptr[i][j];
+            cout << " ]";
+        }
+        cout << endl << endl;
+    }
+    cout << "     a    b    c    d    e    f    g    h" << endl;
 }
